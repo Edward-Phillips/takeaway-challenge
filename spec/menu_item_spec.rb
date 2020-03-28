@@ -1,11 +1,13 @@
-require 'menu'
+require 'menu_item'
 
-describe Menu do
-  let(:menu) {Menu.new}
+describe MenuItem do
+  let(:menu_item) {MenuItem.new}
   context ' seeing available dishes: ' do
-    it " should be able to tell you today's menu" do
+    it " should be able to tell you the name of the dish" do
+      expect(menu_item).to respond_to(:name)
     end
-    it ' should be able to store the specials when the menu is made' do
+    it ' should be able to tell you the price of the dish' do
+      expect(menu_item).to respond_to(:price)
     end
   end
 end
